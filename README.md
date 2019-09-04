@@ -1,1 +1,8 @@
-# label-consistency
+## Master's Thesis
+
+### Improving Labeling Consistency in Medical Imaging for Cell Type Classification
+In medical imaging, pathologists label and count microscopic images of blood cells to identify blood-related diseases. The continuous development process of blood cells includes several intermediate cell stages, but there are no clearly defined borders for these stages. This makes it difficult for pathologists to label cell images consistently, and the classifications are often not reproducible. For predicting diseases accurately, the number of correctly classified blood cells should be as high as possible. 
+
+The thesis introduces a probabilistic model for improving the cell labelings from experts. First, feature representations of the cell images are learned by a neural network. We infer a trajectory through the feature vectors and calculate the corresponding pseudotime, which describes the development progress of the cells. The expert labels are sorted by pseudotime and act as the observed information of an inhomogeneous hidden Markov model. The latent labels of the hidden Markov model are interpreted as the true classes of the images. After learning the time-dependent transition matrices by the expectation-maximization algorithm, the latent labels and unique class borders are inferred via the Viterbi algorithm. Any discrepancies between latent labels and expert labels indicate potentially wrong classifications by the expert. 
+
+The model is applied to two datasets. One contains five cell classes from a development line, while the second one contains ten cell classes from a lineage tree. For the second dataset, the extended theory of hidden Markov trees is used. The hidden Markov model successfully finds wrong classifications and provides corrected labels.
